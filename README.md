@@ -56,8 +56,11 @@ _The motivation for backpropagation is to train a multi-layered neural network s
 But why we are using it here?, infact, what is its role?.
 _The goal of any supervised learning algorithm is to find a function that best maps a set of inputs to their correct output. An example would be a classification task, where the input is an image of an animal, and the correct output is the type of animal (e.g.: dog, cat, giraffe, lion, zebra, etc.)._
 
-__Lets have a look at its Algorithm.__
-[BPAlgorithm](Images/Backpropagation.PNG)
+![Back Propagation](Images/BPN.PNG)
+
+__Let's have a look at its Algorithm.__
+![BPAlgorithm](Images/Backpropagation.PNG)
+
 
 ### 2-Layer Neural Network
 
@@ -175,7 +178,7 @@ Error:0.00462917677677
 Error:0.00395876528027
 Error:0.00351012256786
 ```
-LOL Don't get carried aaway with a lot of Error in the output.
+LOL, Don't be upset with a lot of 'Error' in the output (I also got this while writing this tutorial).
 This code is Explained in _Three_L_NN.ipynb_.   (NOT ADDED YET)
 
 Not making this __README.md__ too log to read, lets end this Tutorial here.
