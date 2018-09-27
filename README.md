@@ -19,7 +19,7 @@ Assuming that you totally understood above image, we may proceed further.
 
 ## Now lets take look at some Mathematics.
 
-![Some Mathematical Notations](Math Notation Cheat Sheet.png)
+refer to _Math Notation Cheat Sheet.png_.
 
 ### Now lets build our first neural network in python.
 only dependency here is numpy.
@@ -104,7 +104,7 @@ Output After Training:
 As you can see in the "Output After Training", it works!!! (A GREAT ROUND OF APPLAUSE FOR YA!!!) Before I describe processes, 
 I recommend playing around with the code to get an intuitive feel for how it works.
 
-Refer to _Two_L_NN.ipynb_ file. Above Code is explained there in detail.
+Refer to _Two_L_NN.ipynb_ file. Above Code is explained there in detail. (NOT ADDAED YET)
 
 ## 3 Layered Neural network
 
@@ -165,7 +165,7 @@ Error:0.00462917677677
 Error:0.00395876528027
 Error:0.00351012256786
 ```
-This code is Explained in _Three_L_NN.ipynb_.
+This code is Explained in _Three_L_NN.ipynb_.   (NOT ADDED YET)
 
 Not making this __README.md__ too log to read, lets end this Tutorial here.
 
