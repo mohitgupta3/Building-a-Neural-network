@@ -1,23 +1,23 @@
 # Building-a-Neural-network
-
 Learn to Build a Neural Network from Scratch.
 
-## Hello world,
+### Hello world,
 In this repo, we will learn about Neural networks and also how to build Neural Networks by playing with some toy codes.
 
 In simple words, Neural networks are "computer system modelled on the human brain and nervous system".
 Neural Networks comprizes of Artificial neurons. 
 
-## But, what the hack is an Artificial neuron?
+### But, what the hack is an Artificial neuron?
 Well, there is no rocket science,
 Consider this image below to understand.
-![Relation b/w Biological and Artificial neuron](neuron.png)
+![Relation b/w Biological and Artificial neuron](Images/neuron.png)
 
 In that Artificial neuron, you can see an encircled equation in the middle, that equation is nothing but an Activation function, if you want to learn about them [here](https://github.com/Optimist-Prime/A-Story-of-Activation-Functions) is the link.
+'x' is the input and 'w' is the weight. __weight__ refers to the strength or amplitude of a connection between two nodes, corresponding in biology to the amount of influence the firing of one neuron has on another.
 
 Assuming that you totally understood above image, we may proceed further.
 
-## Now lets take look at some Mathematics.
+### Now lets take look at some Mathematics.
 
 refer to _Math Notation Cheat Sheet.png_.
 
@@ -43,13 +43,23 @@ for j in xrange(60000):
     syn0 += X.T.dot(l1_delta)
 ```
 The code above will be used to predict the output of three inputs in the table given below.
-![Table to train Simple Network](Table1.PNG)
+![Table to train Simple Network](Images/Table1.PNG)
 
 We could solve this problem by simply measuring statistics between the input values and the output values. If we did so, we would see 
 that the leftmost input column is perfectly correlated with the output. Backpropagation, in its simplest form, measures statistics like
 this to make a model. Let's jump right in and use it to do this.
 
-## 2-Layer Neural Network
+### Backpropagation... What is this? 
+_Backpropagation is a method used in artificial neural networks to calculate a gradient that is needed in the calculation of the weights to be used in the network._ Quite wiered definition huh!. let's understand this thing further as it appears to be quite important. Yes it is.
+
+_The motivation for backpropagation is to train a multi-layered neural network such that it can learn the appropriate internal representations to allow it to learn any arbitrary mapping of input to output._
+But why we are using it here?, infact, what is its role?.
+_The goal of any supervised learning algorithm is to find a function that best maps a set of inputs to their correct output. An example would be a classification task, where the input is an image of an animal, and the correct output is the type of animal (e.g.: dog, cat, giraffe, lion, zebra, etc.)._
+
+__Lets have a look at its Algorithm.__
+[BPAlgorithm](Images/Backpropagation.PNG)
+
+### 2-Layer Neural Network
 
 Refer to the code _Two_L_NN.py_.
 ```python
@@ -106,7 +116,7 @@ I recommend playing around with the code to get an intuitive feel for how it wor
 
 Refer to _Two_L_NN.ipynb_ file. Above Code is explained there in detail. (NOT ADDAED YET)
 
-## 3 Layered Neural network
+### 3 Layered Neural network
 
 ```python
 import numpy as np
@@ -165,17 +175,18 @@ Error:0.00462917677677
 Error:0.00395876528027
 Error:0.00351012256786
 ```
+LOL Don't get carried aaway with a lot of Error in the output.
 This code is Explained in _Three_L_NN.ipynb_.   (NOT ADDED YET)
 
 Not making this __README.md__ too log to read, lets end this Tutorial here.
 
 I hope that, today you learnt a lot about Neural Networks. 
 
-__Wait!!__ Is it all about Neural networks?
+__Wait!!__ Is it all about Neural networks?.
 Are you a master now?
 
-No, It's just a beginning, there is a lot of stuff to learn. However you get a nice start, so lets smile togather and start _coading and Experimenting_. Yeahh, also learning.
+No friend, It's just a beginning, there is a lot of stuff to learn. However you get a nice start, so lets smile togather and start _coading and Experimenting_. Yeahh, also learning.
 
-you may [mail](mohit.gupta2jly@gmail.com) me if you have any issues. Be specific and I will try to write in as easy as possible and brief way, cuz I hate typing.
+you may mail (mohit.gupta2jly@gmail.com) me if you have any issues. Be specific and I will try to write in as easy as possible and brief way, cuz I hate typing.
 
 __NOTE :__ We will Learn to build Convolutional-Neural-Networks in next Repo, stay tuned.
