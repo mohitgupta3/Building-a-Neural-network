@@ -24,7 +24,7 @@ Assuming that you totally understood above image, we may proceed further.
 
 refer to _Math Notation Cheat Sheet.png_.
 
-A Neural Network Consists of the following Components:-
+A Neural Network Consists of the following Components:-.
 __1.__ An input layer, x.
 __2.__ An arbitrary amount of hidden layers.
 __3.__ An output layer, ŷ.
@@ -98,14 +98,14 @@ _The motivation for backpropagation is to train a multi-layered neural network s
 But why we are using it here?, infact, what is its role?.
 _The goal of any supervised learning algorithm is to find a function that best maps a set of inputs to their correct output. An example would be a classification task, where the input is an image of an animal, and the correct output is the type of animal (e.g.: dog, cat, giraffe, lion, zebra, etc.)._
 
-![Back Propagation](Images/BPN.PNG).
+![Back Propagation](Images/BPN.PNG)
 
 In order to know the appropriate amount to adjust the weights and biases by, we need to know the derivative of the loss function with respect to the weights and biases.
 
 Recall from calculus that the derivative of a function is simply the slope of the function.
 If we have the derivative, we can simply update the weights and biases by increasing/reducing with it(refer to the diagram above). This is known as gradient descent.
 
-![Gradient Descent Algorithm](Images/GD.PNG).
+![Gradient Descent Algorithm](Images/GD.PNG)
 
 However, we can’t directly calculate the derivative of the loss function with respect to the weights and biases because the equation of the loss function does not contain the weights and biases. Therefore, we need the chain rule to help us calculate it.
 
