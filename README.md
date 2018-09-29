@@ -259,7 +259,7 @@ Error:0.00462917677677
 Error:0.00395876528027
 Error:0.00351012256786
 ```
-LOL, Don't be upset with a lot of 'Error' in the output.
+LOL, Don't be upset with a lot of 'Error' in the output, actually they are losses.
 This code is Explained in _Three_L_NN.ipynb_.   (NOT ADDED YET)
 
 Not making this __README.md__ too log to read, lets end this Tutorial here.
