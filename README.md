@@ -1,7 +1,10 @@
 # Building-a-Neural-network
 Learn to Build a Neural Network from Scratch.
 
-### Hello world,
+### Motivation: 
+As part of my personal journey to gain a better understanding of Deep Learning, I’ve decided to build a Neural Network from scratch without a deep learning library like TensorFlow. I believe that understanding the inner workings of a Neural Network is important to any aspiring Data Scientist.
+
+__Hello world,__
 In this repo, we will learn about Neural networks and also how to build Neural Networks by playing with some toy codes.
 
 In simple words, Neural networks are "computer system modelled on the human brain and nervous system".
@@ -21,8 +24,28 @@ Assuming that you totally understood above image, we may proceed further.
 
 refer to _Math Notation Cheat Sheet.png_.
 
+A Neural Network Consists of the following Components:-
+__1.__ An input layer, x.
+__2.__ An arbitrary amount of hidden layers.
+__3.__ An output layer, ŷ.
+__4.__ A set of weights and biases between each layer, W and b.
+__5.__ A choice of activation function for each hidden layer, σ. In this tutorial, we’ll use a Sigmoid activation function.
+
 ### Now lets build our first neural network in python.
 only dependency here is numpy.
+
+```python
+class NeuralNetwork:
+    def __init__(self, x, y):
+        self.input      = x
+        self.weights1   = np.random.rand(self.input.shape[1],4) 
+        self.weights2   = np.random.rand(4,1)                 
+        self.y          = y
+        self.output     = np.zeros(y.shape)
+```
+Thats it.
+
+__Now lets use a Neural Network for some tabular problem:__
 Refer to code _Simple_NN.py_
 
 ```python
@@ -49,6 +72,13 @@ We could solve this problem by simply measuring statistics between the input val
 that the leftmost input column is perfectly correlated with the output. Backpropagation, in its simplest form, measures statistics like
 this to make a model. Let's jump right in and use it to do this.
 
+Naturally, the right values for the weights and biases determines the strength of the predictions. The process of fine-tuning the weights and biases from the input data is known as _training the Neural Network._
+
+Each iteration of the training process consists of the following steps:
+
+__1.__ Calculating the predicted output ŷ, known as feedforward.
+__2.__ Updating the weights and biases, known as backpropagation.
+
 ### Loss Function.
 In order to be able to generalise to any problem, we define what we call: loss function. Basically it is a performance metric on how well the NN manages to reach its goal of generating outputs as close as possible to the desired values.
 
@@ -68,11 +98,50 @@ _The motivation for backpropagation is to train a multi-layered neural network s
 But why we are using it here?, infact, what is its role?.
 _The goal of any supervised learning algorithm is to find a function that best maps a set of inputs to their correct output. An example would be a classification task, where the input is an image of an animal, and the correct output is the type of animal (e.g.: dog, cat, giraffe, lion, zebra, etc.)._
 
-![Back Propagation](Images/BPN.PNG)
+![Back Propagation](Images/BPN.PNG).
+
+In order to know the appropriate amount to adjust the weights and biases by, we need to know the derivative of the loss function with respect to the weights and biases.
+
+Recall from calculus that the derivative of a function is simply the slope of the function.
+If we have the derivative, we can simply update the weights and biases by increasing/reducing with it(refer to the diagram above). This is known as gradient descent.
+
+![Gradient Descent Algorithm](Images/GD.PNG).
+
+However, we can’t directly calculate the derivative of the loss function with respect to the weights and biases because the equation of the loss function does not contain the weights and biases. Therefore, we need the chain rule to help us calculate it.
+
+![Chain rule for calculating derivative of the loss function with respect to the weights](Images/CR.PNG)
+
+Hmm.. It's ugly, but it allows us to get what we needed — the derivative (slope) of the loss function with respect to the weights, so that we can adjust the weights accordingly.
 
 __Let's have a look at its Algorithm.__
 ![BPAlgorithm](Images/Backpropagation.PNG)
 
+__Let's code our feed forward and Backpropagation:.__
+```python
+class NeuralNetwork:
+    def __init__(self, x, y):
+        self.input      = x
+        self.weights1   = np.random.rand(self.input.shape[1],4) 
+        self.weights2   = np.random.rand(4,1)                 
+        self.y          = y
+        self.output     = np.zeros(self.y.shape)
+
+    def feedforward(self):
+        self.layer1 = sigmoid(np.dot(self.input, self.weights1))
+        self.output = sigmoid(np.dot(self.layer1, self.weights2))
+
+    def backprop(self):
+        # application of the chain rule to find derivative of the loss function with respect to weights2 and weights1
+        d_weights2 = np.dot(self.layer1.T, (2*(self.y - self.output) * sigmoid_derivative(self.output)))
+        d_weights1 = np.dot(self.input.T,  (np.dot(2*(self.y - self.output) * sigmoid_derivative(self.output), self.weights2.T) * sigmoid_derivative(self.layer1)))
+
+        # update the weights with the derivative (slope) of the loss function
+        self.weights1 += d_weights1
+        self.weights2 += d_weights2
+```
+Easy enough, huh!
+
+Now, let's stick to that tabular thing again and expand it by training a 2-Layer neural network.
 
 ### 2-Layer Neural Network
 
@@ -190,13 +259,13 @@ Error:0.00462917677677
 Error:0.00395876528027
 Error:0.00351012256786
 ```
-LOL, Don't be upset with a lot of 'Error' in the output (I also got this while writing this tutorial).
+LOL, Don't be upset with a lot of 'Error' in the output.
 This code is Explained in _Three_L_NN.ipynb_.   (NOT ADDED YET)
 
 Not making this __README.md__ too log to read, lets end this Tutorial here.
 
 I hope that, today you learnt a lot about Neural Networks. 
-
+Although Deep Learning libraries such as TensorFlow and Keras makes it easy to build deep nets without fully understanding the inner workings of a Neural Network, I find that it’s beneficial for aspiring data scientist to gain a deeper understanding of Neural Networks.
 __Wait!!__ Is it all about Neural networks?.
 Are you a master now?
 
