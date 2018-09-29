@@ -109,7 +109,7 @@ If we have the derivative, we can simply update the weights and biases by increa
 
 However, we can’t directly calculate the derivative of the loss function with respect to the weights and biases because the equation of the loss function does not contain the weights and biases. Therefore, we need the chain rule to help us calculate it.
 
-![Chain rule for calculating derivative of the loss function with respect to the weights](Images/CR.PNG)
+![Chain rule for calculating derivative of the loss function with respect to the weights](Images/CR.png)
 
 Hmm.. It's ugly, but it allows us to get what we needed — the derivative (slope) of the loss function with respect to the weights, so that we can adjust the weights accordingly.
 
