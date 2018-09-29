@@ -105,7 +105,7 @@ In order to know the appropriate amount to adjust the weights and biases by, we 
 Recall from calculus that the derivative of a function is simply the slope of the function.
 If we have the derivative, we can simply update the weights and biases by increasing/reducing with it(refer to the diagram above). This is known as gradient descent.
 
-![Gradient Descent Algorithm](Images/GD.PNG)
+![Gradient Descent Algorithm](Images/GD.png)
 
 However, we can’t directly calculate the derivative of the loss function with respect to the weights and biases because the equation of the loss function does not contain the weights and biases. Therefore, we need the chain rule to help us calculate it.
 
@@ -114,7 +114,7 @@ However, we can’t directly calculate the derivative of the loss function with 
 Hmm.. It's ugly, but it allows us to get what we needed — the derivative (slope) of the loss function with respect to the weights, so that we can adjust the weights accordingly.
 
 __Let's have a look at its Algorithm.__
-![BPAlgorithm](Images/Backpropagation.PNG)
+![BPAlgorithm](Images/Backpropagation.png)
 
 __Let's code our feed forward and Backpropagation:.__
 ```python
